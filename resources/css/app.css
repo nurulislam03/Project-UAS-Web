@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .simple-form {
+        p {
+            @apply mb-5 block flex;
+        }
+        label {
+            @apply min-w-[150px] block;
+        }
+        input, textarea {
+            @apply w-full
+        }
+    }
+}
