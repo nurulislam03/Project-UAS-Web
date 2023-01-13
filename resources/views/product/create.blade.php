@@ -12,7 +12,14 @@
             </div>
         @endif
         <div class="simple-form max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <form action="{{ route("products.store") }}" method="post">
+            @if ($errors->any())
+                <ul class="list-none bg-red-500 rounded-lg my-10">
+                    @foreach ($errors->all() as $error)
+                        <li class="text-white py-2 px-4 font-semibold">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+            <form action="{{ route("products.store") }}" enctype="multipart/form-data" method="post">
                 @csrf
                 <p>
                     <label for="">Kode Produk</label>

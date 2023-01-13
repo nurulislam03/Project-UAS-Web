@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -14,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index');
+
+        $products = Product::orderBy('id', 'DESC')->get();
+        return view('product.index', compact(["products"]));
     }
 
     /**
@@ -36,11 +39,18 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'product_code' => 'required|string|max:155',
+            'product_code' => 'required|string|max:155|unique:products,product_code',
             'product_name' => 'required',
             'product_price' => 'required'
         ]);
+        $filename = time() . '.' . $request->product_image->extension();
+        $upload = $request->product_image->move(public_path('images'), $filename);
 
+        if ($upload) {
+            $request->product_image = $filename;
+        } else {
+            $request->product_image = "";
+        }
         $post = Product::create([
             'product_code' => $request->product_code,
             'product_name' => $request->product_name,
@@ -108,6 +118,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()
+            ->route('products.index')
+            ->with([
+                'success' => 'Produk berhasil di hapus'
+            ]);
     }
 }
