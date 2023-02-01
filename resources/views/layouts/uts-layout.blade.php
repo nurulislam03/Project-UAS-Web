@@ -33,7 +33,7 @@
                   <a href="#profil" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Profil Sekolah</a>
                 </li>
                 <li class="group">
-                  <a href="#jurusan" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Data Akademik</a>
+                  <a href="{{ url('daftarsiswa') }}" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Data Akademik</a>
                 </li>
                 <li class="group">
                   <a href="#artikel" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Artikel</a>
@@ -42,7 +42,7 @@
                   <a href="#" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Fasilitas</a>
                 </li>
                 <li class="group">
-                  <a href="#galery" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Galery</a>
+                  <a href="#galery" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">Gallery</a>
                 </li>
                 <li class="group">
                   <a href="#" class="text-base text-white py-2 mx-6 flex group-hover:text-primary lg:text-sm">E-Learning</a>
@@ -93,17 +93,17 @@
             <ul class="font-medium text-sm text-slate-300">
               <li class="mb-4"><a href="">Identitas Sekolah</a></li>
               <li class="mb-4"><a href="">Berita</a></li>
-              <li class="mb-4"><a href="">Galery</a></li>
+              <li class="mb-4"><a href="">Gallery</a></li>
               <li class="mb-4"><a href="">Fasilitas</a></li>
               <li class="mb-4"><a href="">Kontak Kami</a></li>
             </ul>
           </div>
           <div class="w-full mb-10 p-6 md:w-1/2 lg:w-1/4">
-            <h4 class="font-semibold text-base mb-6 lg:text-lg">Data Akademi</h4>
+            <h4 class="font-semibold text-base mb-6 lg:text-lg">Data Akademik</h4>
             <ul class="font-medium text-sm text-slate-300">
               <li class="mb-4"><a href="">Tenaga Pendidik</a></li>
               <li class="mb-4"><a href="">Tenaga Kependidikan</a></li>
-              <li class="mb-4"><a href="">Dafar Siswa</a></li>
+              <li class="mb-4"><a href="">Daftar Siswa</a></li>
               <li class="mb-4"><a href="">Absensi Siswa</a></li>
               <li class="mb-4"><a href="">Organisasi Sekolah</a></li>
               <li class="mb-4"><a href="">Jadwal Pelajaran</a></li>

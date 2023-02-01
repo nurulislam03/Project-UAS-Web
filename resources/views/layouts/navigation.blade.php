@@ -15,8 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
-                        {{ __('Product') }}
+                    <x-nav-link :href="url('daftar-siswa')" :active="request()->routeIs('daftar-siswa')">
+                        {{ __('Tambah Siswa') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('daftarsiswa')" :active="request()->routeIs('daftarsiswa')">
+                        {{ __('Daftar Siswa') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('tambah-prestasi')" :active="request()->routeIs('tambah-prestasi')">
+                        {{ __('Tambah Prestasi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('prestasi')" :active="request()->routeIs('prestasi')">
+                        {{ __('Prestasi Siswa') }}
                     </x-nav-link>
                 </div>
             </div>

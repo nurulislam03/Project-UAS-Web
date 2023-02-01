@@ -18,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 });
-Route::get('/about', function () {
-    return view('pages.about');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,3 +32,25 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::controller(App\Http\Controllers\DaftarSiswaController::class)->group(function () {
+    
+    Route::get('/daftarsiswa','index');
+    Route::get('/daftar-siswa', 'create');
+    Route::post('/daftar-siswa', 'store');
+    Route::get('/edit-siswa/{siswa_id}', 'edit');
+    Route::put('/update-siswa/{siswa_id}', 'update');
+    Route::delete('/delete-siswa/{siswa_id}', 'destroy');
+    
+});
+
+Route::controller(App\Http\Controllers\PrestasiController::class)->group(function () {
+    
+    Route::get('/prestasi','index');
+    Route::get('/tambah-prestasi', 'create');
+    Route::post('/tambah-prestasi', 'store');
+    Route::get('/edit-prestasi/{prestasi_id}', 'edit');
+    Route::put('/update-prestasi/{prestasi_id}', 'update');
+    Route::delete('/delete-prestasi/{prestasi_id}', 'destroy');
+    
+});
